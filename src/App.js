@@ -17,12 +17,14 @@ class App extends Component {
           id: 2,
           name: 'Kete Martins Rufino',
           belt: 'blue-belt',
+          status: true,
           image: 'https://scontent-grt2-1.xx.fbcdn.net/v/t1.0-1/p160x160/15822776_1171637442872273_9062461770959193095_n.jpg?oh=7799c91c8c1fe4253a8ea242a2fc0d9d&oe=58E68014',
         },
         {
           id: 1,
           name: 'Christiano Martins Milfont de Almeida',
           belt: 'brown-belt',
+          status: true,
           image: 'https://scontent-grt2-1.xx.fbcdn.net/v/t1.0-1/p160x160/15741313_10154753144152667_3342021528357378604_n.jpg?oh=23725582f6ecf08c02b07890fea3351c&oe=5923CF5D',
           owner: true,
         },
@@ -63,6 +65,7 @@ class App extends Component {
     const { training } = this.state;
     return (
       <div className="App">
+        <Training training={training} />
         <Training training={training} />
       </div>
     );

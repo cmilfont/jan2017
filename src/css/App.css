@@ -45,3 +45,9 @@
   background-repeat: no-repeat;
   background-position: right top;
 }
+
+.blue-belt {
+  background-image: url('../images/belts/blue_belt_small.png');
+  background-repeat: no-repeat;
+  background-position: right top;
+}

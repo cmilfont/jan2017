@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
-class Participant extends Component {
+class Container extends Component {
   render() {
     const { name, belt, image } = this.props.participant;
     const className = `belt ${belt}`;
+
+    const { children } = this.props;
 
     return (
       <div className="mdl-cell mdl-cell--4-col">
@@ -15,10 +17,11 @@ class Participant extends Component {
             </div>
             <div className="name">{name}</div>
           </div>
+          {children}
         </div>
       </div>
     );
   }
 }
 
-export default Participant;
+export default Container;

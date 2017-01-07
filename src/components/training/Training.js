@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Participant from 'components/training/Participant';
+import Participant from 'components/training/participants/Participant';
 
 class Training extends React.Component {
 
