@@ -9,7 +9,7 @@ class Training extends React.Component {
 
   render() {
 
-    const { gym, team, style, date, hour, participants } = this.props.training;
+    const { gym, team, image, style, date, hour, participants } = this.props.training;
     const list = participants.map(
       participant => (
         <Participant
@@ -18,9 +18,13 @@ class Training extends React.Component {
         />)
     );
 
+    const styleCss = {
+      background: `url('${image}') center / cover`,
+    }
+
     return (
       <div className="mdl-card mdl-shadow--2dp">
-        <div className="mdl-card__title">
+        <div className="mdl-card__title" style={styleCss}>
           <h2 className="mdl-card__title-text">{gym}</h2>
           <h3 className="mdl-card__title-text">{team}-{style}</h3>
           <h4>{date}<br/>{hour}</h4>
