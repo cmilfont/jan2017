@@ -5,13 +5,18 @@ import Status from './Status';
 class Participant extends Component {
   render() {
     const {
-      participant: { status },
+      dispatch,
+      participant: { id, status },
       owner
     } = this.props;
 
     const statusComponent = (status)?
       null :
-      <Status owner={owner} />;
+      <Status
+        owner={owner}
+        dispatch={dispatch}
+        participantId={id}
+      />;
 
     return (
       <Container {...this.props}>

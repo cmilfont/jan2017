@@ -3,12 +3,10 @@ import Participant from 'components/training/participants/Participant';
 
 class Training extends React.Component {
 
-  static contextTypes = {
-    treinar: PropTypes.func.isRequired
-  }
-
   render() {
     const {
+      treinar,
+      dispatch,
       user: { owner },
       training: { gym, team, image, style, date, hour, participants },
     } = this.props;
@@ -19,6 +17,7 @@ class Training extends React.Component {
           key={`participant-${participant.id}`}
           participant={participant}
           owner={owner}
+          dispatch={dispatch}
         />)
     );
 

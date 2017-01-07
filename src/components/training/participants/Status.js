@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
 
-class Status extends Component {
-  render() {
+const Status = ({ owner, dispatch, participantId }) => {
 
-    const { owner } = this.props;
-    const button = (owner) ?
-      <button className="mdl-button mdl-button--raised mdl-button--colored">
-        Aprovar
-      </button> : null;
+  const onClick = event => {
+    event.preventDefault();
+    dispatch(participantId);
+  };
 
-    return (
-      <div className="status">
-        <div>Pendente</div>
-        {button}
-      </div>
-    )
-  }
-}
+  const button = (owner) ?
+    <button
+      onClick={onClick}
+      className="mdl-button mdl-button--raised mdl-button--colored">
+      Aprovar
+    </button> : null;
+
+  return (
+    <div className="status">
+      <div>Pendente</div>
+      {button}
+    </div>
+  );
+};
 
 export default Status;
