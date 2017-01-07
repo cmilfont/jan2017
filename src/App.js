@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Training from 'components/training/Training';
-import './App.css';
+import './css/App.css';
 
 class App extends Component {
 
@@ -49,7 +49,6 @@ class App extends Component {
   treinar = () => {
     const { user, training, training: { participants } } = this.state;
     this.setState({
-      ...this.state,
       training: {
         ...training,
         participants: [
