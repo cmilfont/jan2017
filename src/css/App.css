@@ -1,3 +1,12 @@
+.menu {
+  height: 3rem;
+}
+
+.menu div {
+  height: 3rem;
+  top: 1rem;
+}
+
 .mdl-card {
   width: 100%;
 }

@@ -8,19 +8,33 @@ class Training extends React.Component {
   }
 
   render() {
+    const {
+      user: { owner },
+      training: { gym, team, image, style, date, hour, participants },
+    } = this.props;
 
-    const { gym, team, image, style, date, hour, participants } = this.props.training;
     const list = participants.map(
       participant => (
         <Participant
           key={`participant-${participant.id}`}
           participant={participant}
+          owner={owner}
         />)
     );
 
     const styleCss = {
       background: `url('${image}') center / cover`,
-    }
+    };
+
+    const action = (owner) ? null :
+      <div className="mdl-card__actions mdl-card--border">
+        <button
+          onClick={this.context.treinar}
+          className="mdl-button mdl-button--raised mdl-button--colored"
+        >
+          Treinar
+        </button>
+      </div>;
 
     return (
       <div className="mdl-card mdl-shadow--2dp">
@@ -34,14 +48,7 @@ class Training extends React.Component {
             {list}
           </div>
         </div>
-        <div className="mdl-card__actions mdl-card--border">
-          <button
-            onClick={this.context.treinar}
-            className="mdl-button mdl-button--raised mdl-button--colored"
-          >
-            Treinar
-          </button>
-        </div>
+        {action}
       </div>
     );
   }

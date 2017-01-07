@@ -4,7 +4,10 @@ import Status from './Status';
 
 class Participant extends Component {
   render() {
-    const { status, owner } = this.props.participant;
+    const {
+      participant: { status },
+      owner
+    } = this.props;
 
     const statusComponent = (status)?
       null :

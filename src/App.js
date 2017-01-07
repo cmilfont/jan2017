@@ -35,7 +35,8 @@ class App extends Component {
       name: 'Adalto Jr',
       belt: 'no-belt',
       image: 'https://scontent-grt2-1.xx.fbcdn.net/v/t1.0-1/p160x160/1491763_1098130876893867_1379900795801254803_n.jpg?oh=d7378bc541c5d7cc17bd95d58e6458a5&oe=5921A5AC',
-    }
+    },
+    pendents: []
   }
 
   static childContextTypes = {
@@ -62,11 +63,24 @@ class App extends Component {
   }
 
   render() {
-    const { training } = this.state;
+    const { training, user, pendents } = this.state;
+    const count = pendents.length;
+    const instructor = {
+      id: 1,
+      name: 'Christiano Martins Milfont de Almeida',
+      belt: 'brown-belt',
+      status: true,
+      image: 'https://scontent-grt2-1.xx.fbcdn.net/v/t1.0-1/p160x160/15741313_10154753144152667_3342021528357378604_n.jpg?oh=23725582f6ecf08c02b07890fea3351c&oe=5923CF5D',
+      owner: true,
+    };
+
     return (
       <div className="App">
-        <Training training={training} />
-        <Training training={training} />
+        <div className="menu">
+          <div className="material-icons mdl-badge mdl-badge--overlap" data-badge={count}>account_box</div>
+        </div>
+        <Training training={training} user={user} />
+        <Training training={training} user={instructor} />
       </div>
     );
   }
