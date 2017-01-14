@@ -23,4 +23,4 @@ class Base extends React.Component {
   }
 }
 
-export default connect( ({ gyms }) => ({ gyms }))(Base);
+export default connect(({ gyms }) => ({ gyms }))(Base);
