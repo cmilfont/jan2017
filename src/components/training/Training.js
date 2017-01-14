@@ -25,10 +25,9 @@ class Training extends React.Component {
       background: `url('${image}') center / cover`,
     };
 
-    const action = (owner) ? null :
-      <div className="mdl-card__actions mdl-card--border">
+    const action = <div className="mdl-card__actions mdl-card--border">
         <button
-          onClick={this.context.treinar}
+          onClick={treinar}
           className="mdl-button mdl-button--raised mdl-button--colored"
         >
           Treinar

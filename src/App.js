@@ -46,6 +46,7 @@ class App extends Component {
       status: true,
       image: 'https://scontent-grt2-1.xx.fbcdn.net/v/t1.0-1/p160x160/15741313_10154753144152667_3342021528357378604_n.jpg?oh=23725582f6ecf08c02b07890fea3351c&oe=5923CF5D',
       owner: true,
+      count: 0,
     },
     pendents: []
   }
@@ -67,22 +68,35 @@ class App extends Component {
   getState = () => (this.state)
 
   treinar = ({ action, payload: user }) => {
-    if (action === 'TREINAR') {
-      const { pendents, training, training: { participants } } = this.state;
-      this.setState({
-        pendents: [
-          ...pendents,
-          user
-        ],
-        training: {
-          ...training,
-          participants: [
-            ...participants,
-            user,
-          ]
-        }
-      });
-    }
+
+    const { user: oldUser } = this.state;
+    this.setState({
+      user: {
+        ...oldUser,
+        count: oldUser.count + 1,
+      },
+    });
+
+    // if (action === 'TREINAR') {
+    //   const { user: oldUser, pendents, training, training: { participants } } = this.state;
+    //   this.setState({
+    //     user: {
+    //       ...oldUser,
+    //       count: oldUser.count + 1,
+    //     },
+    //     pendents: [
+    //       ...pendents,
+    //       user
+    //     ],
+    //     training: {
+    //       ...training,
+    //       participants: [
+    //         ...participants,
+    //         user,
+    //       ]
+    //     }
+    //   });
+    // }
   }
 
   aprovar = (participantId) => {

@@ -13,12 +13,17 @@ class Wrapper extends Component {
     const { treinar, dispatch, getState } = this.context;
     const { user, training } = getState();
     return (
-      <Training
-        user={user}
-        training={training}
-        dispatch={dispatch}
-        treinar={treinar}
-      />
+      <div>
+        <div>
+          Treinos realizados {user.count}
+        </div>
+        <Training
+          user={user}
+          training={training}
+          dispatch={dispatch}
+          treinar={treinar}
+        />
+      </div>
     );
   }
 }

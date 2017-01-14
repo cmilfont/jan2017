@@ -10,6 +10,7 @@
     "react-dom": "^15.4.2",
     "react-router": "^3.0.0"
   },
+  "proxy": "https://rgteam.herokuapp.com",
   "scripts": {
     "start": "NODE_PATH=src react-scripts start",
     "build": "NODE_PATH=src react-scripts build",
