@@ -12,7 +12,7 @@ class Search extends Component {
     const satellite = 'SATELLITE';
 
     return (
-      <div>
+      <div className="search">
         <Map center={[-3.7345753, -38.4697248]} ref={map => (this.map = map)} zoom={16} zoomControl={true}>
           <LayersControl position='topright'>
             <BaseLayer  name='Open Street Map Mapnik'>

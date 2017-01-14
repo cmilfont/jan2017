@@ -5,13 +5,15 @@ class Base extends React.Component {
   render() {
     const { children, count } = this.props;
     return (
-      <div className="App">
+      <div className="mdl-layout mdl-layout--fixed-header">
         <div className="menu">
           <Link to="/training"> Training </Link>
           <Link to="/search"> Search </Link>
           <div className="material-icons mdl-badge mdl-badge--overlap" data-badge={count}>account_box</div>
         </div>
-        {children}
+        <main className="mdl-layout__content">
+          {children}
+        </main>
       </div>
     );
   }
