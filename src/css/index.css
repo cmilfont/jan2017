@@ -11,3 +11,6 @@ div#root {
   width: 100%;
 }
 
+.mdl-menu__container.is-visible .mdl-menu {
+  top: 20px;
+}

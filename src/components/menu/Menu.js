@@ -5,13 +5,43 @@ class Menu extends Component {
   state = {
     className: '',
     isVisible: false,
+    transaction: false,
   }
 
-  togglePopover = ({ target }) => {
-    const { isVisible: oldVisible } = this.state;
-    const isVisible = !oldVisible;
-    const className = (isVisible) ? 'is-visible': '';
-    this.setState({ isVisible, className });
+  componentDidUpdate() {
+    const { isVisible } = this.state;
+    if (isVisible) {
+      this.popover.focus();
+    }
+  }
+
+  onCLick = () => {
+    const { isVisible: oldVisible, transaction } = this.state;
+
+    if (transaction) {
+      this.setState({
+        transaction: false,
+      });
+    } else {
+      this.setState({
+        transaction: false,
+        isVisible: true,
+        className: 'is-visible'
+      });
+    }
+
+
+  }
+
+  onBlur = ({ target }) => {
+    this.setState({
+      transaction: true,
+      isVisible: false,
+      className: ''
+    }, () => {
+      //this.togglePopover({ target });
+    });
+
   }
 
   render() {
@@ -30,11 +60,11 @@ class Menu extends Component {
         <button
           id="menu-profile"
           className="mdl-button mdl-button--icon"
-          onClick={this.togglePopover}
+          onClick={this.onCLick}
         >
           <i className="material-icons">account_box</i>
         </button>;
-        <div className={containerClassName}>
+        <div tabIndex="1"  ref={(popover) => { this.popover = popover; }} className={containerClassName} onBlur={this.onBlur}>
           <div className="mdl-menu__outline mdl-menu--bottom-right"></div>
           <ul
             className="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"

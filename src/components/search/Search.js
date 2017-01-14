@@ -12,6 +12,12 @@ class Search extends Component {
     });
   }
 
+  componentDidUpdate() {
+    const { gyms } = this.props;
+    const bounds = gyms.map(({lat, lng}) => ([lat, lng]));
+    this.map.leafletElement.fitBounds(bounds);
+  }
+
   mapMarkers = (marker) => (
     <Gym key={`gym-${marker.id}`} marker={marker} />
   )

@@ -5,6 +5,10 @@ import MenuItem from 'components/menu/Item';
 
 class Toolbar extends Component {
 
+  updateProfile = () => {
+    debugger;
+  }
+
   render() {
     return (
       <header className="mdl-layout__header">
@@ -17,7 +21,7 @@ class Toolbar extends Component {
           </nav>
           <div className="mdl-layout-spacer"></div>
           <Menu>
-            <MenuItem text="Get Facebook data" />
+            <MenuItem text="Get Facebook data" onClick={this.updateProfile} />
             <MenuItem text="Logout"  />
           </Menu>
         </div>
