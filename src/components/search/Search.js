@@ -1,8 +1,20 @@
 import React, { PropTypes, Component } from 'react';
-import { Map, TileLayer, LayersControl, LayerGroup } from 'react-leaflet';
+import { connect } from 'react-redux';
+import { Map, TileLayer, LayersControl, LayerGroup  } from 'react-leaflet';
 import { GoogleLayer } from 'react-leaflet-google';
+import Gym from 'components/search/Gym';
 
 class Search extends Component {
+
+  componentDidMount() {
+    // fetch('/api/search')
+    //   .then(request => request.json())
+    //   .then(list => (this.setState({ list })))
+  }
+
+  mapMarkers = (marker) => (
+    <Gym key={`gym-${marker.id}`} marker={marker} />
+  )
 
   render() {
     const key = 'AIzaSyCihQHbEvRB7Q11Zj4lUyQSrospvp430rU';
@@ -10,10 +22,15 @@ class Search extends Component {
     const terrain = 'TERRAIN';
     const road = 'ROADMAP';
     const satellite = 'SATELLITE';
+    
+    const pins = this.props.gyms.map(this.mapMarkers)
 
     return (
       <div className="search">
         <Map center={[-3.7345753, -38.4697248]} ref={map => (this.map = map)} zoom={16} zoomControl={true}>
+          <LayerGroup>
+            {pins}
+          </LayerGroup>
           <LayersControl position='topright'>
             <BaseLayer  name='Open Street Map Mapnik'>
               <TileLayer  url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"/>
@@ -35,4 +52,13 @@ class Search extends Component {
   }
 }
 
-export default Search;
+function mapStateToProps(state) {
+
+  return {
+    gyms: state.gyms
+  }
+}
+
+const wrapper = connect(mapStateToProps);
+
+export default wrapper(Search);

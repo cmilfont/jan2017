@@ -1,5 +1,6 @@
 .menu {
   height: 3rem;
+  display: flex;
 }
 
 .menu div {
