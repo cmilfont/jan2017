@@ -19,6 +19,12 @@ class App extends Component {
     const reducers = {
       routing: routerReducer,
       gyms,
+      count: (state = 0, action) => {
+        if (action.type === 'JJTEAM_SEARCH_REQUEST_SUCCESS') {
+          return action.payload.length;
+        }
+        return state;
+      }
     };
 
     const middlewares = [ routerMiddleware(browserHistory), middeware ];

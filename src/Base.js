@@ -1,20 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
+import Toolbar from 'components/menu/Toolbar';
 
 class Base extends React.Component {
   render() {
-    const { children, gyms } = this.props;
-    const count = gyms.length;
+    const { children, count } = this.props;
+
     return (
       <div className="mdl-layout mdl-layout--fixed-header">
-        <div className="menu">
-          <Link to="/training"> Training </Link>
-          <Link to="/search"> Search </Link>
-          <div className="material-icons mdl-badge mdl-badge--overlap" data-badge={count}>account_box</div>
-
-          <div > Academias: {count} </div>
-        </div>
+        <Toolbar />
         <main className="mdl-layout__content">
           {children}
         </main>
@@ -23,4 +17,4 @@ class Base extends React.Component {
   }
 }
 
-export default connect(({ gyms }) => ({ gyms }))(Base);
+export default connect(({ count }) => ({ count }))(Base);
