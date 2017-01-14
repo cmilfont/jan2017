@@ -1,9 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
 class Base extends React.Component {
   render() {
-    const { children, count } = this.props;
+    const { children, gyms } = this.props;
+    const count = gyms.length;
     return (
       <div className="mdl-layout mdl-layout--fixed-header">
         <div className="menu">
@@ -11,7 +13,7 @@ class Base extends React.Component {
           <Link to="/search"> Search </Link>
           <div className="material-icons mdl-badge mdl-badge--overlap" data-badge={count}>account_box</div>
 
-          <div > Academias: 0 </div>
+          <div > Academias: {count} </div>
         </div>
         <main className="mdl-layout__content">
           {children}
@@ -21,4 +23,4 @@ class Base extends React.Component {
   }
 }
 
-export default Base;
+export default connect( ({ gyms }) => ({ gyms }))(Base);

@@ -7,9 +7,9 @@ import Gym from 'components/search/Gym';
 class Search extends Component {
 
   componentDidMount() {
-    // fetch('/api/search')
-    //   .then(request => request.json())
-    //   .then(list => (this.setState({ list })))
+    this.props.dispatch({
+      type: 'JJTEAM_SEARCH_REQUEST'
+    });
   }
 
   mapMarkers = (marker) => (
