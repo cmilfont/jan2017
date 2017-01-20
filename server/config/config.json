@@ -1,0 +1,21 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "rgteam_development",
+    "host": "localhost",
+    "dialect": "postgres",
+    "protocol": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "rgteam_development",
+    "host": "localhost",
+    "dialect": "postgres",
+    "protocol": "postgres"
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL"
+  }
+}

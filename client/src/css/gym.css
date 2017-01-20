@@ -1,0 +1,10 @@
+.gym-create-training {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+}
+
+.gym-create-training .mdl-textfield {
+  width: 50px;
+  margin-right: 1rem;
+}

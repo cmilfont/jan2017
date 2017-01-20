@@ -1,0 +1,113 @@
+.mdl-layout__content {
+  align-items: stretch;
+  display: inline-flex;
+  overflow: scroll;
+  background-color: #F0F0F0;
+}
+
+.training {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: scroll;
+  flex-wrap: wrap;
+}
+
+.training-container {
+  width: 100%;
+}
+
+.training-toolbar {
+  padding: 1rem;
+  display: inline-flex;
+}
+
+.training-toolbar button {
+  margin-right: 1rem;
+}
+
+.training-toolbar .message {
+  margin-left: 10px;
+  line-height: 36px;
+}
+
+.training-disclaimer {
+  margin: 2rem;
+  text-align: center;
+  align-self: center;
+}
+
+.training-header {
+  display: flex;
+  padding: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.training-header__instructor {
+  margin-top: 1rem;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.training-header__instructor-image {
+  flex-shrink: 1;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.training-header__instructor-image img {
+  border-radius: 50%;
+  height: 115px;
+  width: 115px;
+}
+
+.training-header__instructor .training-header__instructor-name .toolbar {
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.training-header__instructor .training-header__instructor-name .toolbar button {
+  margin: auto;
+}
+
+.training-header__instructor-name p {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  text-align: center;
+}
+
+.training-header__instructor-name p.instructor {
+  color: #A43532;
+}
+
+.training-header__title {
+  display: flex;
+  flex-direction: column;
+  color: #2F5375;
+}
+
+.training-header__title-text {
+  text-align: center;
+}
+
+h2.training-header__title-text {
+  margin: 0;
+  font-size: 2rem;
+}
+
+h3.training-header__title-text {
+  margin: 0;
+  min-height: 2rem;
+  line-height: 2rem;
+  font-size: 1.5rem;
+}
+
+h4.training-header__title-text {
+  text-align: center;
+  color: #8B142E;
+  font-weight: 600;
+}

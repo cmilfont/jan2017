@@ -1,0 +1,7 @@
+.danger {
+  background: #A43532;
+}
+
+.mdl-button--raised.mdl-button--colored.danger {
+  background: #A43532;
+}

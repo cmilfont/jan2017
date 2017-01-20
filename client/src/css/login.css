@@ -1,0 +1,29 @@
+.card-login-register.mdl-card.mdl-shadow--2dp {
+  display: flex;
+  margin: auto;
+  top: 20px;
+  max-width: 350px;
+}
+
+.form-errors span, .form-warnings span {
+  color: #d50000;
+  position: absolute;
+  font-size: 12px;
+  margin-top: 3px;
+  display: block;
+}
+
+.reset-password, .register, .login {
+  margin-left: 1rem;
+}
+
+.card-login-register .mdl-textfield--floating-label.is-focused .mdl-textfield__label,
+.card-login-register .mdl-textfield--floating-label.is-dirty .mdl-textfield__label,
+.card-login-register .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
+  color: #272F3A;
+  font-weight: bold;
+}
+
+.card-login-register a {
+  color: #722C2A;
+}

@@ -1,0 +1,28 @@
+.search {
+  flex-direction: column;
+  display: flex;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.leaflet-container {
+  width: 100%;
+  margin: 0;
+  flex: 1;
+  height: 100%;
+}
+
+.inputfile {
+  margin-left: 10%;
+  position: relative;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: #F1EADE;
+}
+
+.leaflet-container a {
+  color: #0078A8;
+  cursor: pointer;
+}
