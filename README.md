@@ -36,8 +36,10 @@ Criar o banco e rodar a app.
 ```
 npm run db:create
 npm run db:migrate
-npm run dev #por padrão vai subir em http://localhost:3000/
+npm run dev
 ```
+
+Por padrão vai subir em http://localhost:3000/
 
 ## PLUS: Deploy no Heroku
 
