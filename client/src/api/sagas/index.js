@@ -9,7 +9,7 @@ import rememberMe from 'api/sagas/rememberMe';
 import swipe from 'api/sagas/swipe';
 import updateProfile from 'api/sagas/updateProfile';
 import search from 'api/sagas/search';
-import training, { applySaga, approveSaga, createSaga, verifySaga, dismissSaga } from 'api/sagas/training';
+import training, { applySaga, approveSaga, createSaga, verifySaga, dismissSaga, cancelSaga } from 'api/sagas/training';
 
 function* rootSaga() {
   yield fork(watchLogin);
@@ -27,6 +27,7 @@ function* rootSaga() {
   yield fork(createSaga);
   yield fork(verifySaga);
   yield fork(dismissSaga);
+  yield fork(cancelSaga);
 }
 
 export default rootSaga;

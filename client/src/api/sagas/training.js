@@ -114,4 +114,15 @@ function* search() {
   yield takeLatest(actions.training.request, prepareSaga);
 }
 
+function* prepareCancel(action) {
+  console.log('Saga', action);
+  yield put({ type:actions.training.cancelSuccess, payload: {
+    msg: 'VDC'
+  } });
+}
+
+export function* cancelSaga() {
+  yield takeLatest(actions.training.cancel, prepareCancel);
+}
+
 export default search;

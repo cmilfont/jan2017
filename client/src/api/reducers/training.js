@@ -6,5 +6,9 @@ export default (state = {}, { type, payload }) => {
     return payload;
   }
 
+  if (type === actions.training.cancelSuccess ) {
+    console.log("PAYLOAD", payload);
+  }
+
   return state;
 };

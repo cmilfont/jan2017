@@ -5,6 +5,7 @@ import gyms from 'api/reducers/gyms';
 import training from 'api/reducers/training';
 import notifications from 'api/reducers/notifications';
 import navigation from 'api/reducers/navigation';
+import editable from 'api/reducers/editable';
 
 export default {
   user,
@@ -14,4 +15,5 @@ export default {
   training,
   notifications,
   navigation,
+  editable,
 };

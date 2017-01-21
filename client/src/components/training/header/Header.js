@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import moment from 'moment';
-import 'moment-timezone';
-import Button from 'components/fields/Button';
+import Toolbar from 'components/training/header/Toolbar';
+import Schedule from 'components/training/header/Schedule';
 
 class Header extends Component {
 
@@ -13,6 +12,7 @@ class Header extends Component {
   render() {
 
     const {
+      editable,
       user: { id: userId },
       training: {
         Gym: { description },
@@ -25,19 +25,14 @@ class Header extends Component {
       }
     } = this.props;
 
-    const formattedDate = moment(date).tz('America/Fortaleza');
-    const hour = formattedDate.format('HH:mm');
-    const dateTz = formattedDate.format('DD/MM/YYYY');
-
-    const cancelButton = (userId === instructorId) ?
-      <Button name="cancel" className="danger" label="Cancelar" onClick={this.cancel} />: '';
+    const toolbar = (instructorId === userId) ? <Toolbar cancel={this.cancel} />: '';
 
     return (
       <div className="training-header">
         <div className="training-header__title">
           <h2 className="training-header__title-text">{description}</h2>
           <h3 className="training-header__title-text">{team}-{style}</h3>
-          <h4 className="training-header__title-text">{dateTz}<br/>{hour}</h4>
+          <Schedule date={date} editable={editable} />
         </div>
         <div className="training-header__instructor">
           <div className="training-header__instructor-image">
@@ -46,9 +41,7 @@ class Header extends Component {
           <div className="training-header__instructor-name">
             <p className="instructor">Instrutor</p>
             <p>{name}</p>
-            <div className="toolbar">
-              {cancelButton}
-            </div>
+            {toolbar}
           </div>
         </div>
       </div>

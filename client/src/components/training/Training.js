@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 /* API */
 import { mapTrainingDispatchToProps } from 'api/actions';
 /* [COMPONENTS] ordem: externos ->  modulo */
-import Header from 'components/training/Header';
+import Header from 'components/training/header/Header';
 import Disclaimer from 'components/training/Disclaimer';
 import Participants from 'components/training/participants/Participants';
 import Toolbar from 'components/training/Toolbar';
@@ -23,7 +23,7 @@ class Training extends React.Component {
   render() {
     const { training, user, cancel } = this.props;
 
-    const header = (training.id) ? <Header user={user} training={training} cancel={cancel} /> : <Disclaimer />;
+    const header = (training.id) ? <Header {...this.props} /> : <Disclaimer />;
 
     return (
       <div className="training-container">
@@ -37,4 +37,4 @@ class Training extends React.Component {
   }
 }
 
-export default connect(({ training, user }) => ({ training, user }), mapTrainingDispatchToProps)(Training);
+export default connect(({ training, user, editable }) => ({ training, user, editable }), mapTrainingDispatchToProps)(Training);

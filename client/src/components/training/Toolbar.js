@@ -44,18 +44,17 @@ class Toolbar extends Component {
   }
 
   render() {
-
     const { training, user } = this.props;
     const disabled = this.disabled();
     const message = this.makeAlert();
 
-    return (
+    return (training.id && training.Instructor.User.id === user.id) ?
+      <div /> :
       <div className="training-toolbar mdl-cell--bottom">
         <Button name="apply" label="Participar" disabled={disabled} onClick={this.apply} />
         <Dismiss dismiss={this.dismiss} training={training} user={user} />
         <div className="message warning">{message}</div>
-      </div>
-    );
+      </div>;
   }
 }
 

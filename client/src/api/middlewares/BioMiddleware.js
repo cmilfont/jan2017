@@ -20,6 +20,8 @@ function middleware(store) {
         window.ReactGA.pageview(window.location.pathname);
       }
 
+      console.log(action.type, action.payload);
+
       return dispatch(action);
     }
   );
