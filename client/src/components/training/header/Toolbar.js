@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import { mapTrainingDispatchToProps } from 'api/actions';
 import Button from 'components/fields/Button';
 
-export const Toolbar = ({ user, training, editable, cancel, edit }) => {
+export const Toolbar = ({ user, training, editable, cancel, onEdit }) => {
 
   if (training.Instructor.User.id !== user.id) {
     return (<div />);
   }
 
   const onCancel = () => (cancel({ id: training.id }));
-  const onEdit = () => (edit(training));
+  //const onEdit = () => (edit(training));
 
   return (editable.id) ? (
     <div className="toolbar">
@@ -25,4 +25,7 @@ export const Toolbar = ({ user, training, editable, cancel, edit }) => {
   );
 };
 
-export default connect(({ user, training, editable }) => ({ user, training, editable }), mapTrainingDispatchToProps)(Toolbar);
+export default connect(({ user, training, editable }) => ({ user, training, editable }), mapTrainingDispatchToProps, (stateProps, dispatchProps, ownProps) => {
+  return Object.assign(stateProps, ownProps, { onEdit: () => (dispatchProps.edit(stateProps.training)) })
+}
+)(Toolbar);
