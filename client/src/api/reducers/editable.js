@@ -1,5 +1,14 @@
 import actions from 'api/actions';
 
 export default (state, { type, payload }) => {
-  return (actions.training.edit === type) ? payload : {};
+
+  if (actions.training.edit === type) {
+    return payload;
+  }
+
+  if (actions.training.update === type) {
+    return payload;
+  }
+  
+  return {};
 }
