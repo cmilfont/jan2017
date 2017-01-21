@@ -4,13 +4,7 @@ import Schedule from 'components/training/header/Schedule';
 
 class Header extends Component {
 
-  cancel = () => {
-    const { cancel, training: { id } } = this.props;
-    cancel({ id });
-  }
-
   render() {
-
     const {
       editable,
       user: { id: userId },
@@ -24,8 +18,6 @@ class Header extends Component {
         }
       }
     } = this.props;
-
-    const toolbar = (instructorId === userId) ? <Toolbar cancel={this.cancel} />: '';
 
     return (
       <div className="training-header">
@@ -41,7 +33,7 @@ class Header extends Component {
           <div className="training-header__instructor-name">
             <p className="instructor">Instrutor</p>
             <p>{name}</p>
-            {toolbar}
+            <Toolbar />
           </div>
         </div>
       </div>

@@ -11,6 +11,7 @@ class Training extends Router {
     app.post('/api/training/:id/approve/:participantId', this.approve.bind(this));
     app.get('/api/training/:id', this.search.bind(this));
     app.post('/api/training', this.create.bind(this));
+    app.put('/api/training/:id', this.save.bind(this));
   }
 
   verify(req, res) {
@@ -52,6 +53,49 @@ class Training extends Router {
         }
       ]
     }).then(participant => (res.send(participant)));
+
+  }
+
+  save(req, res) {
+
+    const { Gym, Training, Instructor, User, Participant } = this.models;
+
+    const { id } = req.params;
+    const { user: { id: UserId }, body: { hours, minutes } } = req;
+    const date = moment.tz("America/Fortaleza");
+    const times = { minutes };
+    if (hours) {
+      times.hours = hours;
+    }
+    date.set(times);
+
+    Training.findOne({
+      where: { id },
+      attributes: ['id', 'style', 'team', 'date'],
+      include: [
+        { model: Gym, attributes: ['description'] },
+        {
+          model: Participant,
+          attributes: ['id', 'status'],
+          include: {
+            model: User,
+            attributes: ['id', 'name', 'imageUrl']
+          }
+        },
+        {
+          model: Instructor,
+          attributes: ['id'],
+          include: {
+            model: User,
+            attributes: ['id', 'name', 'imageUrl'],
+          }
+        }
+      ]
+    }).then(training => (
+      training.update({ date: date.toDate() }).then(() => {
+        res.send(training);
+      })
+    ));
 
   }
 
