@@ -1,11 +1,23 @@
 {
   "name": "JiujitsuTeam",
   "short_name": "JiujitsuTeam",
-  "icons": [{
-    "src": "/images/jjteam.svg",
-    "type": "image/svg",
-    "sizes": "192x192"
-  }],
+  "icons": [
+    {
+      "src": "/images/jjt96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/jjt144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/jjt192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
   "start_url": "/",
   "display": "fullscreen",
   "background_color": "#F0F0F0",
