@@ -1,0 +1,13 @@
+{
+  "name": "JiujitsuTeam",
+  "short_name": "JiujitsuTeam",
+  "icons": [{
+    "src": "/images/jjteam.svg",
+    "type": "image/svg",
+    "sizes": "192x192"
+  }],
+  "start_url": "/",
+  "display": "fullscreen",
+  "background_color": "#F0F0F0",
+  "theme_color": "#8B142E"
+}

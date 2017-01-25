@@ -7,9 +7,7 @@ class Base extends Component {
     return (
       <div className="mdl-layout mdl-layout--fixed-header">
         <Toolbar />
-        <main className="mdl-layout__content">
-          {children}
-        </main>
+        {children}
       </div>
     );
   }

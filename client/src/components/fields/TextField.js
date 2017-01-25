@@ -111,7 +111,7 @@ class TextField extends React.Component {
 
   render() {
     const { type, labelName, name, focused, invalid, id, value } = this.state;
-    const { onClick, onKeyPress } = this.props;
+    const { onClick, onKeyPress, onChange } = this.props;
 
     const fieldType = type || 'text';
     const isFocused = (focused) ? 'is-focused' : '';
@@ -130,7 +130,7 @@ class TextField extends React.Component {
           id={id}
           name={name}
           value={value}
-          onChange={this.onChange}
+          onChange={onChange || this.onChange}
           onFocus={this.onFocus}
           onBlur={this.handleBlur}
           onClick={onClick}

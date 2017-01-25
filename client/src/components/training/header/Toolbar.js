@@ -3,18 +3,15 @@ import { connect } from 'react-redux';
 import { mapTrainingDispatchToProps } from 'api/actions';
 import Button from 'components/fields/Button';
 
-export const Toolbar = ({ user, training, editable, cancel, onEdit }) => {
+export const Toolbar = ({ user, training, editable, save, onCancel, onEdit }) => {
 
   if (training.Instructor.User.id !== user.id) {
     return (<div />);
   }
 
-  const onCancel = () => (cancel({ id: training.id }));
-  //const onEdit = () => (edit(training));
-
   return (editable.id) ? (
     <div className="toolbar">
-      <Button name="save" className="" label="Save" />
+      <Button name="save" label="Save" onClick={save} />
       <Button name="cancel" disabled={true} label="Cancelar" />
     </div>
   ) : (
@@ -26,6 +23,9 @@ export const Toolbar = ({ user, training, editable, cancel, onEdit }) => {
 };
 
 export default connect(({ user, training, editable }) => ({ user, training, editable }), mapTrainingDispatchToProps, (stateProps, dispatchProps, ownProps) => {
-  return Object.assign(stateProps, ownProps, { onEdit: () => (dispatchProps.edit(stateProps.training)) })
+  return Object.assign(stateProps, dispatchProps, ownProps, {
+    onEdit:   () => (dispatchProps.edit(stateProps.training)),
+    onCancel: () => (dispatchProps.cancel({ id: stateProps.training.id }))
+  })
 }
 )(Toolbar);

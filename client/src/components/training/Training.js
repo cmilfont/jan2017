@@ -26,13 +26,15 @@ class Training extends React.Component {
     const header = (training.id) ? <Header {...this.props} /> : <Disclaimer />;
 
     return (
-      <div className="training-container">
-        <Toolbar />
-        <div className="training">
-          {header}
-          <Participants user={user} training={training} />
+      <main className="mdl-layout__content">
+        <div className="training-container">
+          <Toolbar />
+          <div className="training">
+            {header}
+            <Participants {...this.props} />
+          </div>
         </div>
-      </div>
+      </main>
     );
   }
 }

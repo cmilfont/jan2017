@@ -6,15 +6,12 @@ class Header extends Component {
 
   render() {
     const {
-      editable,
-      user: { id: userId },
       training: {
         Gym: { description },
         style,
         team,
-        date,
         Instructor: {
-          User: { id: instructorId, name, imageUrl }
+          User: { name, imageUrl }
         }
       }
     } = this.props;
@@ -24,7 +21,7 @@ class Header extends Component {
         <div className="training-header__title">
           <h2 className="training-header__title-text">{description}</h2>
           <h3 className="training-header__title-text">{team}-{style}</h3>
-          <Schedule date={date} editable={editable} />
+          <Schedule />
         </div>
         <div className="training-header__instructor">
           <div className="training-header__instructor-image">

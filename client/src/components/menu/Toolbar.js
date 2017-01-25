@@ -17,14 +17,23 @@ class Toolbar extends Component {
 
   render() {
     const { user, logout } = this.props;
+    const logo = `${process.env.PUBLIC_URL}/images/jjt.png`;
     return (
       <header className="mdl-layout__header">
         <div className="mdl-layout__header-row">
-          <span className="mdl-layout-title">RGT</span>
+          <span className="mdl-layout-title">
+            <img src={logo} alt="logo" className="logo" />
+          </span>
           <div className="mdl-layout-spacer"></div>
           <nav className="mdl-navigation">
-            <Link className="mdl-navigation__link" to="/search"> Mapa </Link>
-            <Link className="mdl-navigation__link" to="/training"> Treinos </Link>
+            <Link className="mdl-navigation__link" to="/search">
+              <i className="material-icons">map</i>
+              Mapa
+            </Link>
+            <Link className="mdl-navigation__link" to="/training">
+              <i className="material-icons">local_play</i>
+              Treinos
+            </Link>
           </nav>
           <div className="mdl-layout-spacer"></div>
           <Menu user={user}>

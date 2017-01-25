@@ -1,9 +1,28 @@
+.search-container {
+  position: fixed;
+  top:0;
+  height: 100%;
+  width: 100%;
+}
+
 .search {
   flex-direction: column;
   display: flex;
   position: absolute;
   height: 100%;
   width: 100%;
+}
+
+.search .leaflet-top {
+  top: 60px;
+}
+
+.leaflet-control-layers, .leaflet-bar a, .leaflet-bar a:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+  border: 0;
 }
 
 .leaflet-container {
@@ -25,4 +44,9 @@
 .leaflet-container a {
   color: #0078A8;
   cursor: pointer;
+}
+
+.add-location .material-icons {
+  font-size: 3rem;
+  color: #8B142E;
 }

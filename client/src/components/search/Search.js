@@ -12,9 +12,11 @@ class Search extends Component {
   render() {
     const { gyms } = this.props;
     return (
-      <div className="search">
-        <Map gyms={gyms} />
-      </div>
+      <main className="mdl-layout__content search-container">
+        <div className="search">
+          <Map gyms={gyms} />
+        </div>
+      </main>
     );
   }
 }

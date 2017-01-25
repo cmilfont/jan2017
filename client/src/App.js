@@ -28,6 +28,10 @@ import Search from 'components/search/Search';
 
 class App extends Component {
 
+  componentDidMount() {
+    
+  }
+
   render() {
 
     const sagaMiddleware = createSagaMiddleware({

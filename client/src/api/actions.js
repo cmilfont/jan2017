@@ -52,6 +52,7 @@ export const training = {
   cancelSuccess: `${NAMESPACE}_TRAINING_CANCEL_SUCCESS`,
   cancelFailure: `${NAMESPACE}_TRAINING_CANCEL_ERROR`,
   edit: `${NAMESPACE}_TRAINING_EDIT`,
+  update: `${NAMESPACE}_TRAINING_UPDATE`,
   save: `${NAMESPACE}_TRAINING_SAVE`,
   saveSuccess: `${NAMESPACE}_TRAINING_SAVE_SUCCESS`,
   saveFailure: `${NAMESPACE}_TRAINING_SAVE_ERROR`,
@@ -161,6 +162,7 @@ export const mapTrainingDispatchToProps = dispatch => (
     cancel: defaultAction(dispatch, actions.training.cancel),
     edit: defaultAction(dispatch, actions.training.edit),
     save: defaultAction(dispatch, actions.training.save),
+    update: defaultAction(dispatch, actions.training.update),
     goToTraining: (payload) => (dispatch(payload)),
   }
 );

@@ -7,19 +7,19 @@
 }
 
 .black-belt-thumb {
-  background-image: url('../images/belts/black_belt_thumb.png');
+  background-image: url('%PUBLIC_URL%/images/belts/black_belt_thumb.png');
   background-repeat: no-repeat;
   background-position: right top;
 }
 
 .brown-belt {
-  background-image: url('../images/belts/brown_belt_small.png');
+  background-image: url('%PUBLIC_URL%/images/belts/brown_belt_small.png');
   background-repeat: no-repeat;
   background-position: right top;
 }
 
 .no-belt {
-  background-image: url('../images/belts/no_belt_small.png');
+  background-image: url('%PUBLIC_URL%/images/belts/no_belt_small.png');
   background-repeat: no-repeat;
   background-position: right top;
 }

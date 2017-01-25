@@ -1,5 +1,23 @@
 .mdl-layout__header {
   background-color: #8B142E;
+  background: transparent;
+  /*position: fixed;*/
+  box-shadow: none;
+}
+
+.logo {
+  height: 30px;
+  background: transparent;
+}
+
+.mdl-layout__header-row .mdl-navigation__link {
+    color: #8B142E;
+    font-size: 1.5rem;
+    opacity: 1;
+}
+
+.mdl-layout__header-row .mdl-navigation__link .material-icons {
+  font-size: 3rem;
 }
 
 .mdl-badge.mdl-badge--overlap {
