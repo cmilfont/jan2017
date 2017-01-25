@@ -252,7 +252,10 @@ self.addEventListener('fetch', function(event) {
 
 // Runtime cache configuration, using the sw-toolbox library.
 
+toolbox.router.get("https://unpkg.com/leaflet@1.0.2/dist/leaflet.css", toolbox.fastest, {"cache":{"maxEntries":10,"name":"leaflet-cache"}});
 toolbox.router.get("https://code.getmdl.io/1.3.0/material.blue-red.min.css", toolbox.fastest, {"cache":{"maxEntries":10,"name":"mdl-cache"}});
+toolbox.router.get("https://fonts.googleapis.com/icon?family=Material+Icons", toolbox.fastest, {"cache":{"maxEntries":10,"name":"mdl-icons-cache"}});
+toolbox.router.get("https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en", toolbox.fastest, {"cache":{"maxEntries":10,"name":"roboto-cache"}});
 
 
 
