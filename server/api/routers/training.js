@@ -36,7 +36,7 @@ class Training extends Router {
       include: [
         {
           model: Training,
-          attributes: ['id', 'team', 'style', 'date', 'GymId', 'InstructorId'],
+          attributes: ['id', 'team', 'style', 'date', 'GymId', 'InstructorId', 'canceled'],
           required: true,
           where: {
             date: {
@@ -84,7 +84,7 @@ class Training extends Router {
 
     Training.findOne({
       where: { id },
-      attributes: ['id', 'style', 'team', 'date'],
+      attributes: ['id', 'style', 'team', 'date', 'canceled'],
       include: [
         { model: Gym, attributes: ['description'] },
         {
@@ -135,6 +135,7 @@ class Training extends Router {
         GymId,
         style: "Luta Livre Brunocilla",
         team: "RGT",
+        canceled: false,
         date: date.toDate()
       }).then(training => {
 
@@ -189,7 +190,7 @@ class Training extends Router {
 
     Training.findOne({
       where: { id },
-      attributes: ['id', 'style', 'team', 'date'],
+      attributes: ['id', 'style', 'team', 'date', 'canceled'],
       include: [
         { model: Gym, attributes: ['description'] },
         {

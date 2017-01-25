@@ -5,6 +5,10 @@ import Button from 'components/fields/Button';
 
 export const Toolbar = ({ user, training, editable, save, onCancel, onEdit }) => {
 
+  if (training.canceled) {
+    return (<div className="canceled">CANCELADO</div>);
+  }
+
   if (training.Instructor.User.id !== user.id) {
     return (<div />);
   }

@@ -3,7 +3,8 @@ module.exports = function(sequelize, DataTypes) {
   const Training = sequelize.define('Training', {
     style: DataTypes.STRING,
     team: DataTypes.STRING,
-    date: DataTypes.DATE
+    date: DataTypes.DATE,
+    canceled: DataTypes.BOOLEAN
   }, {
     classMethods: {
       associate: function(models) {

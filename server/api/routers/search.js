@@ -16,7 +16,7 @@ class Search extends Router {
       include: [
         {
           model: Training,
-          attributes: ['id', 'team', 'style', 'date'],
+          attributes: ['id', 'team', 'style', 'date', 'canceled'],
           required: false,
           where: {
             date: {

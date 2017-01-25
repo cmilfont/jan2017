@@ -116,9 +116,15 @@ function* search() {
 
 function* prepareCancel(action) {
   console.log('Saga', action);
-  yield put({ type:actions.training.cancelSuccess, payload: {
-    msg: 'VDC'
-  } });
+  const { id } = action.payload;
+  const payload = yield call(defaultFetch, `/api/training/${id}/cancel`, { id: '' }, 'PUT');
+  const { error } = payload;
+  if (error) {
+    yield put(failure(error));
+  } else {
+    yield put({ type: actions.training.cancelSuccess, payload });
+  }
+
 }
 
 export function* cancelSaga() {

@@ -48,7 +48,7 @@ class Toolbar extends Component {
     const disabled = this.disabled();
     const message = this.makeAlert();
 
-    return (training.id && training.Instructor.User.id === user.id) ?
+    return (training.id && training.Instructor.User.id === user.id || training.canceled) ?
       <div /> :
       <div className="training-toolbar mdl-cell--bottom">
         <Button name="apply" label="Participar" disabled={disabled} onClick={this.apply} />

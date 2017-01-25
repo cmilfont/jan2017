@@ -111,3 +111,10 @@ h4.training-header__title-text {
   color: #8B142E;
   font-weight: 600;
 }
+
+.canceled {
+  font-weight: 900;
+  font-size: 2rem;
+  text-align: center;
+  color: #8B142E;
+}

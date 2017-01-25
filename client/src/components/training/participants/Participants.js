@@ -10,7 +10,7 @@ class Participants extends Component {
       const key = `participant-${participant.User.id}`;
       return (
         <div key={key} className="mdl-cell mdl-cell--6-col">
-          <Participant TrainingId={training.id} participant={participant} owner={owner} />
+          <Participant canceled={training.canceled} TrainingId={training.id} participant={participant} owner={owner} />
         </div>
       );
     });

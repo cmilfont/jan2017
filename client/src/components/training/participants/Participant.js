@@ -11,7 +11,7 @@ class Participant extends React.Component {
   }
 
   render() {
-    const { participant: { status, User: { imageUrl, name } }, owner } = this.props;
+    const { participant: { status, User: { imageUrl, name } }, owner, canceled } = this.props;
 
     const cardTitleStyle = {
         background: `url('${imageUrl}') center / cover`,
@@ -21,7 +21,7 @@ class Participant extends React.Component {
       <div className="mdl-card">
         <div className="mdl-card__title" style={cardTitleStyle} />
         <div className="mdl-card__supporting-text">{name}</div>
-        <Status owner={owner} status={status} approve={this.approve} />
+        <Status canceled={canceled} owner={owner} status={status} approve={this.approve} />
       </div>
     );
   }
