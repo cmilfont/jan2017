@@ -11,12 +11,25 @@ class Training extends Router {
     app.post('/api/training/:id/approve/:participantId', this.approve.bind(this));
     app.get('/api/training/:id', this.search.bind(this));
     app.post('/api/training', this.create.bind(this));
+    app.put('/api/training/:id/cancel', this.cancel.bind(this));
     app.put('/api/training/:id', this.save.bind(this));
   }
 
+  cancel(req, res) {
+    const { id } = req.params;
+    const { user: { id: UserId } } = req;
+    const { Training } = this.models;
+    //verificar se é o instrutor quem está cancelando mesmo
+    Training.findById(id).then(training => {
+      training.update({ canceled: true }).then(() => {
+        res.send(training);
+      })
+    });
+  }
+
   verify(req, res) {
-    const {user: {id: UserId}} = req;
-    const {Gym, Training, Instructor, User, Participant} = this.models;
+    const { user: { id: UserId } } = req;
+    const { Gym, Training, Instructor, User, Participant } = this.models;
 
     Participant.findOne({
       where: { UserId },
