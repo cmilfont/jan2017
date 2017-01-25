@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="297mm"
+   width="210mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="jjt.svg">
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="993"
+     id="namedview6"
+     showgrid="false"
+     inkscape:zoom="0.44851478"
+     inkscape:cx="245.45255"
+     inkscape:cy="508.93298"
+     inkscape:window-x="1680"
+     inkscape:window-y="257"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <metadata
+     id="metadata4">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path
+     style="fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:1.08077681px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M 337.38299,270.43289 C 174.5829,270.43257 42.607277,402.40819 42.607607,565.20828 42.607287,728.00837 174.5829,859.98399 337.38299,859.98367 500.18231,859.98291 632.15675,728.0076 632.15643,565.20828 l -143.46485,0 c 1e-5,83.56543 -67.74316,151.3086 -151.30859,151.30859 -83.56543,0 -151.30861,-67.74316 -151.3086,-151.30859 0,-83.56543 67.74317,-151.30859 151.3086,-151.30859 l 0,-143.4668 z"
+     id="path3245"
+     inkscape:connector-curvature="0"
+     inkscape:export-xdpi="105.73"
+     inkscape:export-ydpi="105.73" />
+  <path
+     style="fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:1.08077681px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 337.38251,472.23091 c -51.34962,-2.1e-4 -92.97677,41.62694 -92.97656,92.97656 -2.1e-4,51.34962 41.62694,92.97677 92.97656,92.97656 51.34963,2.2e-4 92.97678,-41.62693 92.97657,-92.97656 2.1e-4,-51.34963 -41.62694,-92.97678 -92.97657,-92.97656 z"
+     id="path3166"
+     inkscape:connector-curvature="0"
+     inkscape:export-xdpi="105.73"
+     inkscape:export-ydpi="105.73" />
+  <rect
+     style="fill:#8b142e;stroke:none;fill-opacity:1"
+     id="rect3274"
+     width="327.13449"
+     height="143.46622"
+     x="396.47656"
+     y="270.39252"
+     inkscape:export-xdpi="105.73"
+     inkscape:export-ydpi="105.73" />
+  <rect
+     y="270.39252"
+     x="487.91656"
+     height="235.6945"
+     width="144.25449"
+     id="rect3276"
+     style="fill:#8b142e;stroke:none;fill-opacity:1"
+     inkscape:export-xdpi="105.73"
+     inkscape:export-ydpi="105.73" />
+</svg>
