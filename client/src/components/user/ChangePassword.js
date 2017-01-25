@@ -14,7 +14,7 @@ class ChangePassword extends Container {
 
   componentDidMount() {
     const { params: { token } } = this.props;
-    this.refs.form.setValues({ token });
+    this.formContainer.setValues({ token });
   }
 
   createContainer() {
