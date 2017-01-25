@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Map, TileLayer, LayersControl, LayerGroup, Pane } from 'react-leaflet';
+import { Map, TileLayer, LayersControl, LayerGroup } from 'react-leaflet';
 import { GoogleLayer } from 'react-leaflet-google';
 import Gym from 'components/search/Gym';
-import ButtonControl from 'components/search/ButtonControl';
+//import ButtonControl from 'components/search/ButtonControl';
 
 class MapLeaflet extends Component {
 

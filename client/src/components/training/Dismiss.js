@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import Button from 'components/fields/Button';
 
 class Dismiss extends Component {
@@ -28,7 +28,7 @@ class Dismiss extends Component {
 
     return (training.id && training.Instructor.User.id === userId);
   }
-  
+
   render() {
 
     const { dismiss } = this.props;

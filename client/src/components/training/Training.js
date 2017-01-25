@@ -1,9 +1,6 @@
-/* LIBS */
 import React from 'react';
 import { connect } from 'react-redux';
-/* API */
 import { mapTrainingDispatchToProps } from 'api/actions';
-/* [COMPONENTS] ordem: externos ->  modulo */
 import Header from 'components/training/header/Header';
 import Disclaimer from 'components/training/Disclaimer';
 import Participants from 'components/training/participants/Participants';
@@ -21,7 +18,7 @@ class Training extends React.Component {
   }
 
   render() {
-    const { training, user, cancel } = this.props;
+    const { training } = this.props;
 
     const header = (training.id) ? <Header {...this.props} /> : <Disclaimer />;
 

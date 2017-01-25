@@ -7,7 +7,6 @@ export default (state, { type, payload }) => {
   }
 
   if (actions.training.update === type) {
-    //return payload;
     return state;
   }
 
