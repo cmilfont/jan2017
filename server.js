@@ -16,6 +16,10 @@ app.get('/api/list', (req, res) => {
   });
 });
 
+app.get('/service-worker.js', (req, res) => {
+  res.sendfile(`${__dirname}/client/build/service-worker.js`);
+});
+
 app.get('/*', (req, res) => {
   // /token/5776a237-22f8-495a-b5c7-c80d07f79f4e
   res.sendfile(`${__dirname}/client/build/index.html`);
