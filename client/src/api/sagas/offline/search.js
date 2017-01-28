@@ -4,8 +4,8 @@ import actions from 'api/actions';
 
 
 export function* prepareSaga() {
-  
-  const payload = yield window.localforage.getItem('gyms') || {};
+
+  const payload = yield window.localforage.getItem('gyms') || [];
   yield put({
     type: actions.gym.requestSuccess,
     payload
