@@ -1,5 +1,5 @@
 import { takeLatest } from 'redux-saga/effects';
-import { call, put, select  } from 'redux-saga/effects';
+import {  put, select  } from 'redux-saga/effects';
 import { push } from 'react-router-redux';
 import actions from 'api/actions';
 
