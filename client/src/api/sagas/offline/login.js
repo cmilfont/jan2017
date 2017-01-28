@@ -9,9 +9,7 @@ const failure = payload => ({
 });
 
 export function* prepareSaga(action) {
-debugger;
   const payload = yield window.localforage.getItem('user');
-
   const { error } = payload;
   if (error) {
     yield put(failure(error));
