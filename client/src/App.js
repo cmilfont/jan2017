@@ -13,6 +13,7 @@ import createSagaMiddleware from 'redux-saga';
 import BioMiddleware from 'api/middlewares/BioMiddleware.js';
 import ApiReducers from 'api/reducers';
 import Sagas from 'api/sagas';
+import offlineSagas from 'api/sagas/offline';
 import actions from 'api/actions';
 
 /* Controle de usuário */
@@ -28,41 +29,67 @@ import Search from 'components/search/Search';
 
 class App extends Component {
 
-  componentDidMount() {
-
-  }
-
-  render() {
-
-    const sagaMiddleware = createSagaMiddleware({
+  constructor(props) {
+    super(props);
+    this.sagaMiddleware = createSagaMiddleware({
       onError: (error) => {
         //window.airbrake.notify(error);
       },
     });
-
     const reducers = combineReducers({ routing: routerReducer, ...ApiReducers });
+    const middlewares = [ routerMiddleware(browserHistory), this.sagaMiddleware, BioMiddleware ];
+    this.store = createStore(reducers, compose(applyMiddleware(...middlewares)));
+    this.history = syncHistoryWithStore(browserHistory, this.store);
 
-    const middlewares = [ routerMiddleware(browserHistory), sagaMiddleware, BioMiddleware ];
+    window.rgtStore = this.store;
 
-    const store = createStore(reducers, compose(applyMiddleware(...middlewares)));
+  }
 
-    const history = syncHistoryWithStore(browserHistory, store);
+  componentDidMount() {
 
+  }
+
+  componentWillMount() {
+
+    this.register();
+
+    window.addEventListener('online',  this.updateOnlineStatus);
+    window.addEventListener('offline', this.updateOnlineStatus);
+  }
+
+  register = () => {
+    const { onLine } = navigator;
+    if (onLine) {
+      this.sagaMiddleware.run(Sagas);
+    } else {
+      this.sagaMiddleware.run(offlineSagas);
+    }
+  }
+
+  updateOnlineStatus = event => {
+    const { onLine: payload } = navigator;
+    const condition = payload ? "online" : "offline";
+    this.register();
+    this.store.dispatch({
+      type: actions.status[condition],
+      payload,
+    });
+  }
+
+  render() {
     const validateUser = (nextState, replace, callback) => {
-      const { user } = store.getState();
+      const { user } = this.store.getState();
       if (user && !user.id) {
         const { location: { pathname: payload } } = nextState;
-        store.dispatch({ type: actions.navigation.destination, payload });
+        this.store.dispatch({ type: actions.navigation.destination, payload });
         replace('/login');
       }
       callback();
     };
 
-    sagaMiddleware.run(Sagas);
-
     return (
-      <Provider store={store}>
-        <Router history={history}>
+      <Provider store={this.store}>
+        <Router history={this.history}>
           <Route path="/index.html" component={Base}>
             <IndexRedirect to="/search" />
           </Route>

@@ -72,7 +72,13 @@ export const error = {
   login: `${NAMESPACE}_ERROR_LOGIN`,
 };
 
+export const status = {
+  online: `${NAMESPACE}_ONLINE`,
+  offline: `${NAMESPACE}_OFFLINE`,
+}
+
 const actions = {
+  status,
   error,
   user,
   swipe,
