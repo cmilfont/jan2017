@@ -43,12 +43,20 @@ class Toolbar extends Component {
     return (training.id && training.Instructor.User.id === userId);
   }
 
+
+  ehTreinador = (training, user) => {
+    return training.id && training.Instructor.User.id === user.id
+  }
+
+  foiCancelado = (training) => {
+    return training.canceled;
+  }
   render() {
     const { training, user } = this.props;
     const disabled = this.disabled();
     const message = this.makeAlert();
 
-    return (training.id && training.Instructor.User.id === user.id || training.canceled) ?
+    return ( this.ehTreinador(training, user) || this.foiCancelado(training)) ?
       <div /> :
       <div className="training-toolbar mdl-cell--bottom">
         <Button name="apply" label="Participar" disabled={disabled} onClick={this.apply} />
@@ -57,5 +65,6 @@ class Toolbar extends Component {
       </div>;
   }
 }
+
 
 export default connect(({ training, user }) => ({ training, user }), mapTrainingDispatchToProps)(Toolbar);
