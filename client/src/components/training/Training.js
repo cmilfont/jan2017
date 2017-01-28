@@ -6,7 +6,7 @@ import Disclaimer from 'components/training/Disclaimer';
 import Participants from 'components/training/participants/Participants';
 import Toolbar from 'components/training/Toolbar';
 
-class Training extends React.Component {
+export class Training extends React.Component {
 
   componentDidMount() {
     const { params: { id }, request, verify } = this.props;
