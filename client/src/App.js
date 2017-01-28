@@ -59,10 +59,13 @@ class App extends Component {
 
   register = () => {
     const { onLine } = navigator;
+    if (this.tasks) {
+      this.tasks.cancel();
+    }
     if (onLine) {
-      this.sagaMiddleware.run(Sagas);
+      this.tasks = this.sagaMiddleware.run(Sagas);
     } else {
-      this.sagaMiddleware.run(offlineSagas);
+      this.tasks = this.sagaMiddleware.run(offlineSagas);
     }
   }
 

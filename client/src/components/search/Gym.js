@@ -22,7 +22,7 @@ class Gym extends Component {
 
   render() {
 
-    const { map, layerContainer, gym, user } = this.props;
+    const { map, layerContainer, gym, user, online } = this.props;
     const { lat, lng, description, address, tel, site, Trainings, Instructors } = gym;
     const hours = Trainings.map(training => (
       <Training
@@ -32,7 +32,10 @@ class Gym extends Component {
       />
     ));
 
-    const formContainer = (Instructors.find(instructor => (instructor.UserId === user.id))) ?
+    const formContainer = (
+      Instructors.find(instructor => (instructor.UserId === user.id)) &&
+      online
+    ) ?
 
     <FormContainer ref={(form) => { this.formContainer = form; }}>
       <div className="gym-create-training">
@@ -71,4 +74,4 @@ class Gym extends Component {
   }
 }
 
-export default connect(({ user }) => ({ user }), mapTrainingDispatchToProps)(Gym);
+export default connect(({ user, online }) => ({ user, online }), mapTrainingDispatchToProps)(Gym);

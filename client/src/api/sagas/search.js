@@ -14,6 +14,7 @@ export function* prepareSaga() {
   if (error) {
     yield put(failure(error));
   } else {
+    yield window.localforage.setItem('gyms', payload);
     yield put({ type: actions.gym.requestSuccess, payload });
   }
 }
