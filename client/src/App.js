@@ -29,7 +29,7 @@ import Search from 'components/search/Search';
 class App extends Component {
 
   componentDidMount() {
-    
+
   }
 
   render() {
@@ -63,6 +63,9 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router history={history}>
+          <Route path="/index.html" component={Base}>
+            <IndexRedirect to="/search" />
+          </Route>
           <Route path="/" component={Base}>
             <IndexRedirect to="/search" />
             <Route path="search" component={Search} onEnter={validateUser}  />
