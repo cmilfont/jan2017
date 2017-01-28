@@ -1,7 +1,7 @@
 import React from 'react';
 import { describe, beforeEach, it } from 'mocha';
 import { expect } from 'chai';
-import { shallow } from 'enzyme';
+import { shallow, render } from 'enzyme';
 import { spy } from 'sinon';
 
 import { Training } from 'components/training/Training';
@@ -25,7 +25,8 @@ describe('Container: Training', function() {
   });
 
   it('Verify was called', () => {
-    expect(this.training.prototype.componentDidMount.calledOnce).to.equal(true);
+    this.training.instance().componentDidMount();
+    expect(this.verify.called).to.equal(true);
   });
 
 });
