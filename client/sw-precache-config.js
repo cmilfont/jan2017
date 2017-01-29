@@ -4,6 +4,7 @@ module.exports = {
     'build/*.html',
     'build/manifest.json',
     'build/service-worker.js',
+    'build/images/**/*',
     'build/static/**/!(*map*)'
   ],
   dontCacheBustUrlsMatching: /\.\w{8}\./,

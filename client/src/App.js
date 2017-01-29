@@ -48,7 +48,6 @@ class App extends Component {
   componentWillMount() {
 
     this.register();
-
     window.addEventListener('online',  this.updateOnlineStatus);
     window.addEventListener('offline', this.updateOnlineStatus);
   }
@@ -56,6 +55,7 @@ class App extends Component {
   register = () => {
     const { onLine } = navigator;
     if (this.tasks) {
+      console.log('Cancel tudo')
       this.tasks.cancel();
     }
     if (onLine) {
